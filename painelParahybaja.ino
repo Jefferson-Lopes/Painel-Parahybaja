@@ -226,18 +226,16 @@ void printVelo(void){
     tft.print("0");
     tft.print(inVelo);
   }
-  else { 
-    if ((inVelo / 10) == (holdVelo / 10)){
-      tft.fillRect(x0VELO + 15 + 84, y0VELO + 7 - 95, 60, 95, BLACK);
-      tft.setCursor(x0VELO + 84, y0VELO);
-      tft.print(inVelo % 10);
-    }
-    else {
-      tft.fillRect(x0VELO + 15, y0VELO + 7 - 95, 60, 95, BLACK);
-      tft.fillRect(x0VELO + 15 + 84, y0VELO + 7 - 95, 60, 95, BLACK);
-      tft.setCursor(x0VELO, y0VELO);
-      tft.print(inVelo);
-    }
+  else if ((inVelo / 10) == (holdVelo / 10)){
+    tft.fillRect(x0VELO + 15 + 84, y0VELO + 7 - 95, 60, 95, BLACK);
+    tft.setCursor(x0VELO + 84, y0VELO);
+    tft.print(inVelo % 10);
+  }
+  else {
+    tft.fillRect(x0VELO + 15, y0VELO + 7 - 95, 60, 95, BLACK);
+    tft.fillRect(x0VELO + 15 + 84, y0VELO + 7 - 95, 60, 95, BLACK);
+    tft.setCursor(x0VELO, y0VELO);
+    tft.print(inVelo);
   }
   
   holdVelo = inVelo;
